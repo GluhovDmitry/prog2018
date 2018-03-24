@@ -82,13 +82,8 @@ namespace ConsoleApplication80
         }
         private static void TestHugeArray()
         {
-            int[] hugeArray = new int[100001];
-            Random rand = new Random();
-            for (int i = 0; i < hugeArray.Length; i++)
-            {
-                hugeArray[i] = rand.Next(0, 5);
-                //Console.Write(hugeArray[i] + " ");
-            }
+            IEnumerable<int> squares = Enumerable.Range(1, 100001);
+            int[] hugeArray = squares.ToArray();
             if (BinarySearch(hugeArray, 4) >= 0)
                 Console.WriteLine("Поиск элемента в массиве из 100001 элементов работает корректно");
             else
