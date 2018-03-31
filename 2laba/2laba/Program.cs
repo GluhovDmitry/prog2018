@@ -19,7 +19,7 @@ namespace ConsoleApplication80
                     right = middle;
                 else left = middle + 1;
             }
-            if (right > 0 && array[right] == value)
+            if (right >= 0 && array[right] == value)
                 return right;
             return -1;
         }
