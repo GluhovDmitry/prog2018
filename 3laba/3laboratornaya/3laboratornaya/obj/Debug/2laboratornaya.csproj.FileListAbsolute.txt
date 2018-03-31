@@ -1,0 +1,6 @@
+C:\forks\prog2018\3laba\2laboratornaya\2laboratornaya\bin\Debug\2laboratornaya.exe.config
+C:\forks\prog2018\3laba\2laboratornaya\2laboratornaya\bin\Debug\2laboratornaya.exe
+C:\forks\prog2018\3laba\2laboratornaya\2laboratornaya\bin\Debug\2laboratornaya.pdb
+C:\forks\prog2018\3laba\2laboratornaya\2laboratornaya\obj\Debug\2laboratornaya.csprojResolveAssemblyReference.cache
+C:\forks\prog2018\3laba\2laboratornaya\2laboratornaya\obj\Debug\2laboratornaya.exe
+C:\forks\prog2018\3laba\2laboratornaya\2laboratornaya\obj\Debug\2laboratornaya.pdb

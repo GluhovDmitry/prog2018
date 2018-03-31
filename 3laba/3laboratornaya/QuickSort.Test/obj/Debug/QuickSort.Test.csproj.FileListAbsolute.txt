@@ -1,0 +1,9 @@
+C:\forks\prog2018\3laba\2laboratornaya\QuickSort.Test\bin\Debug\QuickSort.Test.dll
+C:\forks\prog2018\3laba\2laboratornaya\QuickSort.Test\bin\Debug\QuickSort.Test.pdb
+C:\forks\prog2018\3laba\2laboratornaya\QuickSort.Test\bin\Debug\2laboratornaya.exe
+C:\forks\prog2018\3laba\2laboratornaya\QuickSort.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\forks\prog2018\3laba\2laboratornaya\QuickSort.Test\bin\Debug\2laboratornaya.pdb
+C:\forks\prog2018\3laba\2laboratornaya\QuickSort.Test\bin\Debug\ru\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\forks\prog2018\3laba\2laboratornaya\QuickSort.Test\obj\Debug\QuickSort.Test.csprojResolveAssemblyReference.cache
+C:\forks\prog2018\3laba\2laboratornaya\QuickSort.Test\obj\Debug\QuickSort.Test.dll
+C:\forks\prog2018\3laba\2laboratornaya\QuickSort.Test\obj\Debug\QuickSort.Test.pdb
