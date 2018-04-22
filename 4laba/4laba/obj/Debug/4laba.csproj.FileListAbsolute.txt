@@ -1,0 +1,6 @@
+C:\forks\prog2018\4laba\4laba\4laba\bin\Debug\4laba.exe.config
+C:\forks\prog2018\4laba\4laba\4laba\obj\Debug\4laba.csprojResolveAssemblyReference.cache
+C:\forks\prog2018\4laba\4laba\4laba\bin\Debug\4laba.exe
+C:\forks\prog2018\4laba\4laba\4laba\bin\Debug\4laba.pdb
+C:\forks\prog2018\4laba\4laba\4laba\obj\Debug\4laba.exe
+C:\forks\prog2018\4laba\4laba\4laba\obj\Debug\4laba.pdb

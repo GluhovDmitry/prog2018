@@ -1,0 +1,9 @@
+C:\forks\prog2018\4laba\4laba\HashTable.Tests\obj\Debug\HashTable.Tests.csprojResolveAssemblyReference.cache
+C:\forks\prog2018\4laba\4laba\HashTable.Tests\bin\Debug\HashTable.Tests.dll
+C:\forks\prog2018\4laba\4laba\HashTable.Tests\bin\Debug\HashTable.Tests.pdb
+C:\forks\prog2018\4laba\4laba\HashTable.Tests\bin\Debug\4laba.exe
+C:\forks\prog2018\4laba\4laba\HashTable.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\forks\prog2018\4laba\4laba\HashTable.Tests\bin\Debug\4laba.pdb
+C:\forks\prog2018\4laba\4laba\HashTable.Tests\bin\Debug\ru\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\forks\prog2018\4laba\4laba\HashTable.Tests\obj\Debug\HashTable.Tests.dll
+C:\forks\prog2018\4laba\4laba\HashTable.Tests\obj\Debug\HashTable.Tests.pdb
