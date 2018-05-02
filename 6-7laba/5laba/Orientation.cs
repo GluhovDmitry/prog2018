@@ -15,6 +15,6 @@ namespace _5laba
         Hetero,
         Homo,
         Bi,
-        Cats
+        Кошечки
     }
 }

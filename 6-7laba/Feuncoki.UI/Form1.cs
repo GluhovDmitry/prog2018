@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static _5laba.Orientation;
 
 namespace Feuncoki.UI
 {
@@ -99,6 +100,7 @@ namespace Feuncoki.UI
                 var dto = GetModelFromUI();
                 Saver1(dto);
                 Saver2(dto);
+                Orientation_saver(dto);
                 SerializeHelper.WriteToFile(sfd.FileName, dto);
             }
         }
@@ -120,6 +122,29 @@ namespace Feuncoki.UI
                 SetModelToUI(dto);
                 Setter1(dto);
                 Setter2(dto);
+                Orientation_getter(dto);
+            }
+        }
+        private void Orientation_saver(UserInfo p)
+        {
+            if (radioButton1.Checked)
+            {
+                p.SOrientation = TypesOrient.Hetero;
+            }
+            if (radioButton2.Checked)
+            {
+                p.SOrientation = TypesOrient.Кошечки;
+            }
+        }
+        private void Orientation_getter(UserInfo p)
+        {
+            if ((p.SOrientation).Equals(TypesOrient.Hetero))
+            {
+                radioButton1.Checked = true;
+            }
+            if ((p.SOrientation).Equals(TypesOrient.Кошечки))
+            {
+                radioButton2.Checked = true;
             }
         }
     }

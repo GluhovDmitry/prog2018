@@ -15,7 +15,7 @@ namespace _5laba
         public string Region { get; set; }
         public string City { get; set; }
         public List<Goal> Purpose { get; set; }
-        public Orientation SOrientation { get; set; }
+        public TypesOrient SOrientation { get; set; }
         public static void Main(string[] args)
         {
 
