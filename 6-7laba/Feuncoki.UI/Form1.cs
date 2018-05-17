@@ -101,10 +101,14 @@ namespace Feuncoki.UI
                 Saver1(dto);
                 Saver2(dto);
                 Orientation_saver(dto);
+                Goal_Saver1(dto);
+                Goal_Saver2(dto);
+                Goal_Saver3(dto);
+                Goal_Saver4(dto);
                 SerializeHelper.WriteToFile(sfd.FileName, dto);
             }
         }
-        
+
         private void SetModelToUI(UserInfo dto)
         {
             textBox1.Text = dto.Name;
@@ -122,6 +126,10 @@ namespace Feuncoki.UI
                 SetModelToUI(dto);
                 Setter1(dto);
                 Setter2(dto);
+                Goal_Getter1(dto);
+                Goal_Getter2(dto);
+                Goal_Getter3(dto);
+                Goal_Getter4(dto);
                 Orientation_getter(dto);
             }
         }
@@ -147,5 +155,62 @@ namespace Feuncoki.UI
                 radioButton2.Checked = true;
             }
         }
+        private void Goal_Saver1(UserInfo inf)
+        {
+            if (checkBox1.Checked)
+            {
+                inf.Purpose = TypesPurpose.Friend;
+            }
+        }
+        private void Goal_Saver2(UserInfo inf)
+        {
+            if (checkBox2.Checked)
+            {
+                inf.Purpose = TypesPurpose.Talk;
+            }
+        }
+        private void Goal_Saver3(UserInfo inf)
+        {
+            if (checkBox3.Checked)
+            {
+                inf.Purpose = TypesPurpose.Relations;
+            }
+        }
+        private void Goal_Saver4(UserInfo inf)
+        {
+            if (checkBox4.Checked)
+            {
+                inf.Purpose = TypesPurpose.PomatrosilAndThrew;
+            }
+        }
+        private void Goal_Getter1(UserInfo inf)
+        {
+            if ((inf.Purpose).Equals(TypesPurpose.Friend))
+            {
+                checkBox1.Checked = true;
+            }
+        }
+        private void Goal_Getter2(UserInfo inf)
+        {
+            if ((inf.Purpose).Equals(TypesPurpose.Relations))
+            {
+                checkBox2.Checked = true;
+            }
+        }
+        private void Goal_Getter3(UserInfo inf)
+        {
+            if ((inf.Purpose).Equals(TypesPurpose.Relations))
+            {
+                checkBox3.Checked = true;
+            }
+        }
+        private void Goal_Getter4(UserInfo inf)
+        {
+            if ((inf.Purpose).Equals(TypesPurpose.PomatrosilAndThrew))
+            {
+                checkBox4.Checked = true;
+            }
+        }
     }
 }
+

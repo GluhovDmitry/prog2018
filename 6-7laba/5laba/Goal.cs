@@ -8,15 +8,15 @@ namespace _5laba
 {
     public class Goal
     {
-        public string Purpose { get; set; }
+        public TypesPurpose Purpose { get; set; }
+
     }
 
-    //public enum Purpose
-    //{
-    //    Friend,
-    //    Talk,
-    //    Relations,
-    //    PomatrosilAndThrew,
-    //    SoKissMeEverywhereImAlredy18
-    //}
+    public enum TypesPurpose
+    {
+        Friend,
+        Talk,
+        Relations,
+        PomatrosilAndThrew
+    }
 }
