@@ -51,6 +51,8 @@
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -252,12 +254,33 @@
             this.label8.TabIndex = 21;
             this.label8.Text = "Цели знакомства:";
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(332, 326);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(120, 95);
+            this.listBox1.TabIndex = 22;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(458, 391);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(71, 30);
+            this.button3.TabIndex = 23;
+            this.button3.Text = "Вставить";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Feuncoki.UI.Properties.Resources._5796f85ec584515625ba3259;
-            this.ClientSize = new System.Drawing.Size(556, 351);
+            this.ClientSize = new System.Drawing.Size(607, 451);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.checkBox4);
             this.Controls.Add(this.checkBox3);
@@ -313,6 +336,8 @@
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox4;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button button3;
     }
 }
 

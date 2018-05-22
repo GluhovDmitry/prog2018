@@ -14,9 +14,9 @@ namespace _5laba
 
     public enum TypesPurpose
     {
-        Friend,
-        Talk,
-        Relations,
-        PomatrosilAndThrew
+        Дружба,
+        Общение,
+        Совместныйэксгибиционизм,
+        Поматроситьибросить
     }
 }
