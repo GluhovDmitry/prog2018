@@ -28,7 +28,7 @@ namespace Feuncoki.UI
                 Age = numericUpDown1.Value,
                 Region = textBox2.Text,
                 City = textBox3.Text,    
-                addGoal = listBox1.Items.OfType<string>().ToList()
+                //addGoal = listBox1.Items.OfType<string>().ToList()
             };
         }
         private void ComboBox1()
@@ -116,11 +116,11 @@ namespace Feuncoki.UI
             numericUpDown1.Value = dto.Age;
             textBox2.Text = dto.Region;
             textBox3.Text = dto.City;
-            listBox1.Items.Clear();
-            foreach (var i in dto.addGoal)
-            {
-                listBox1.Items.Add(i);
-            }
+            //listBox1.Items.Clear();
+            //foreach (var i in dto.addGoal)
+            //{
+            //    listBox1.Items.Add(i);
+            //}
         }
         private void button2_Click_1(object sender, EventArgs e)
         {
@@ -163,99 +163,111 @@ namespace Feuncoki.UI
         }
         private void Goal_Saver1(UserInfo inf)
         {
-            if (checkBox1.Checked)
+            if (checkBox1.Checked )
             {
-                inf.Purpose1 = TypesPurpose.Дружба;
+                inf.Purpose.Add(TypesPurpose.Дружба.ToString());
             }
         }
         private void Goal_Saver2(UserInfo inf)
         {
             if (checkBox2.Checked)
             {
-                inf.Purpose2 = TypesPurpose.Общение;
+                inf.Purpose.Add(TypesPurpose.Общение.ToString());
             }
         }
         private void Goal_Saver3(UserInfo inf)
         {
             if (checkBox3.Checked)
             {
-                inf.Purpose3 = TypesPurpose.Совместныйэксгибиционизм;
+                inf.Purpose.Add(TypesPurpose.Совместныйэксгибиционизм.ToString());
             }
         }
         private void Goal_Saver4(UserInfo inf)
         {
             if (checkBox4.Checked)
             {
-                inf.Purpose4 = TypesPurpose.Поматроситьибросить;
+                inf.Purpose.Add(TypesPurpose.Поматроситьибросить.ToString());
             }
         }
         private void Goal_Getter1(UserInfo inf)
         {
-            if ((inf.Purpose1).Equals(TypesPurpose.Дружба))
+            foreach (var e in inf.Purpose)
             {
-                checkBox1.Checked = true;
+                if (e == TypesPurpose.Дружба.ToString())
+                {
+                    checkBox1.Checked = true;
+                }
             }
         }
         private void Goal_Getter2(UserInfo inf)
         {
-            if ((inf.Purpose2).Equals(TypesPurpose.Общение))
+            foreach (var e in inf.Purpose)
             {
-                checkBox2.Checked = true;
+                if (e == TypesPurpose.Общение.ToString())
+                {
+                    checkBox2.Checked = true;
+                }
             }
         }
         private void Goal_Getter3(UserInfo inf)
         {
-            if ((inf.Purpose3).Equals(TypesPurpose.Совместныйэксгибиционизм))
+            foreach (var e in inf.Purpose)
             {
-                checkBox3.Checked = true;
+                if (e == TypesPurpose.Совместныйэксгибиционизм.ToString())
+                {
+                    checkBox3.Checked = true;
+                }
             }
         }
         private void Goal_Getter4(UserInfo inf)
         {
-            if ((inf.Purpose4).Equals(TypesPurpose.Поматроситьибросить))
+            foreach (var e in inf.Purpose)
             {
-                checkBox4.Checked = true;
+                if (e == TypesPurpose.Поматроситьибросить.ToString())
+                {
+                    checkBox4.Checked = true;
+                }
             }
         }
-        List<string> Goals = new List<string>();
-        public List<string> addGoals()
-        {
-            var f1 = 0;
-            var f2 = 0;
-            var f3 = 0;
-            var f4 = 0;
-            if (checkBox1.Checked == true && f1 != 1)
-            {
-                Goals.Add(TypesPurpose.Дружба.ToString());
-                f1 = 1;           
-            if (checkBox2.Checked == true && f2 != 2)
-            {
-                Goals.Add(TypesPurpose.Общение.ToString());
-                f2 = 2;
-            }
-            if (checkBox3.Checked == true && f3 != 3)
-            {
-                Goals.Add(TypesPurpose.Совместныйэксгибиционизм.ToString());
-                f3 = 3;
-            }
-            if (checkBox4.Checked == true && f4 != 4)
-            {
-                Goals.Add(TypesPurpose.Поматроситьибросить.ToString());
-                f4 = 4;
-            }
-            }
-            return Goals;
-        }
+        //List<string> Goals = new List<string>();
+        //public List<string> addGoals()
+        //{
+        //    var f1 = 0;
+        //    var f2 = 0;
+        //    var f3 = 0;
+        //    var f4 = 0;
+        //    if (checkBox1.Checked == true && f1 != 1)
+        //    {
+        //        Goals.Add(TypesPurpose.Дружба.ToString());
+        //        f1 = 1;           
+        //    if (checkBox2.Checked == true && f2 != 2)
+        //    {
+        //        Goals.Add(TypesPurpose.Общение.ToString());
+        //        f2 = 2;
+        //    }
+        //    if (checkBox3.Checked == true && f3 != 3)
+        //    {
+        //        Goals.Add(TypesPurpose.Совместныйэксгибиционизм.ToString());
+        //        f3 = 3;
+        //    }
+        //    if (checkBox4.Checked == true && f4 != 4)
+        //    {
+        //        Goals.Add(TypesPurpose.Поматроситьибросить.ToString());
+        //        f4 = 4;
+        //    }
+        //    }
+        //    return Goals;
+        //}
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        //private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            listBox1.Items.AddRange(addGoals().ToArray());
-        }
+        //private void button3_Click(object sender, EventArgs e)
+        //{
+        //    //listBox1.Items.AddRange(addGoals().ToArray());
+        //}
     }
 }
 

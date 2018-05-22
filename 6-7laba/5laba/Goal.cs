@@ -8,8 +8,7 @@ namespace _5laba
 {
     public class Goal
     {
-        public TypesPurpose Purpose { get; set; }
-
+        public string Goals { get; set; }      
     }
 
     public enum TypesPurpose

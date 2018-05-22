@@ -14,12 +14,17 @@ namespace _5laba
         public Country Country { get; set; }
         public string Region { get; set; }
         public string City { get; set; }
-        public List<string> addGoal { get; set; }
-        public TypesPurpose Purpose1 { get; set; }
-        public TypesPurpose Purpose2 { get; set; }
-        public TypesPurpose Purpose3 { get; set; }
-        public TypesPurpose Purpose4 { get; set; }
+        public List<string> Purpose { get; set; }
+        //public TypesPurpose Purpose1 { get; set; }
+        //public TypesPurpose Purpose2 { get; set; }
+        //public TypesPurpose Purpose3 { get; set; }
+        //public TypesPurpose Purpose4 { get; set; }
         public TypesOrient SOrientation { get; set; }
+
+        public UserInfo()
+        {
+            Purpose = new List<string>();
+        }
         public static void Main(string[] args)
         {
 
