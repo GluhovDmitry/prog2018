@@ -54,12 +54,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ошибочка.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ошибочка.Designer.cs">
-      <DependentUpon>Ошибочка.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Телефонный справочник.resx">
       <DependentUpon>Телефонный справочник.cs</DependentUpon>
     </EmbeddedResource>
@@ -72,9 +66,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Ошибочка.resx">
-      <DependentUpon>Ошибочка.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
