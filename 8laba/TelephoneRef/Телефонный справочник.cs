@@ -21,12 +21,12 @@ namespace TelephoneRef
         {
             bool f = false;
             foreach (string str in File.ReadLines("DATA.txt"))
-            {              
+            {
                 string[] splitStr = str.Split(new Char[] { ' ' });
                 if (textBox1.Text != string.Empty && splitStr.Contains(textBox1.Text) || textBox2.Text != string.Empty && splitStr.Contains(textBox2.Text))
                 {
                     f = true;
-                }                
+                }
             }
             return f;
         }
@@ -43,11 +43,11 @@ namespace TelephoneRef
             string t = textBox2.Text;
             //for (int i = 0; i < t.Length; i++)
             //{
-                //if (char.IsNumber(t[i]) & textBox2.Text != string.Empty && double.Parse(textBox2.Text) > 99999999999)
-                if (t.Length > 11)
-                {
-                    f = false;
-                }
+            //if (char.IsNumber(t[i]) & textBox2.Text != string.Empty && double.Parse(textBox2.Text) > 99999999999)
+            if (t.Length > 11)
+            {
+                f = false;
+            }
             //}
             return f;
         }
@@ -56,7 +56,7 @@ namespace TelephoneRef
             bool f = true;
             char[] Arr1 = textBox1.Text.ToCharArray();
             char[] Arr2 = textBox2.Text.ToCharArray();
-            for (var i = 0; i < Arr1.Length-1; i++)
+            for (var i = 0; i < Arr1.Length - 1; i++)
             {
                 if (char.IsNumber(Arr1[i]) == true || char.IsLetter(Arr2[i]) == true)
                     f = false;
@@ -90,15 +90,34 @@ namespace TelephoneRef
         {
             Close();
         }
-
+        public void NoWhitePlace()
+        {
+            string[] fileLines = File.ReadAllLines("DATA.txt");
+                int k = 0;
+                foreach (var str in fileLines)
+                {
+                    string[] splitedLine = str.Split(' ');
+                    if (splitedLine[0] == String.Empty)
+                    {
+                        for (var i = k; i < fileLines.Length - 1; i++)
+                        {
+                            fileLines[i] = fileLines[i + 1];
+                        }
+                        fileLines[fileLines.Length - 1] = String.Empty;
+                    }
+                    k++;
+                }
+                File.WriteAllLines("DATA.txt", fileLines);
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             string Line = textBox1.Text + ' ' + textBox2.Text + Environment.NewLine;
             if (!File.Exists("DATA.txt"))
                 File.Create("DATA.txt").Close();
             if (EmpyTextBoxException() == true && NameIsNumberOrNumberIsLetter() == true && RepeatException() == true && BigNumber() == true)
-            {             
+            {
                 File.AppendAllText("DATA.txt", Line);
+                NoWhitePlace();
             }
             else
             {
@@ -137,35 +156,26 @@ namespace TelephoneRef
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (NameIsNumberOrNumberIsLetter()==true && BigNumber() && DoesNotExist())
+            if (NameIsNumberOrNumberIsLetter() == true && BigNumber() && DoesNotExist())
             {
                 string[] fileLines = File.ReadAllLines("DATA.txt");
                 int k = 0;
-                foreach (string str in fileLines)
+                foreach (var str in fileLines)
                 {
-                    string[] splitStr = str.Split(new Char[] { ' ' });
-                    if (splitStr.Contains(textBox1.Text))
+                    string[] splitedLine = str.Split(' ');
+                    if (splitedLine[0] == textBox1.Text)
                     {
-                        if (k != fileLines.Length - 1)
-                            for (var i = k; i < fileLines.Length-1; i++)
-                            {
-                                fileLines[i] = fileLines[i + 1];
-                            }
-                        else fileLines[k] = String.Empty;
+                        for (var i = k; i < fileLines.Length - 1; i++)
+                        {
+                            fileLines[i] = fileLines[i + 1];
+                        }
+                        fileLines[fileLines.Length - 1] = String.Empty;
                     }
-                    else if (splitStr.Contains(textBox2.Text))
-                    {
-                        if (k != fileLines.Length - 1)
-                            for (var i = k; i < fileLines.Length-1; i++)
-                            {
-                                fileLines[i] = fileLines[i + 1];
-                            }
-                        else fileLines[k] = String.Empty;
-                    }
-                    File.WriteAllLines("DATA.txt", fileLines);
                     k++;
                 }
+                File.WriteAllLines("DATA.txt", fileLines);
             }
+
             else
             {
                 //Ошибочка f = new Ошибочка();
