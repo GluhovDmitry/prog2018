@@ -17,6 +17,19 @@ namespace TelephoneRef
         {
             InitializeComponent();
         }
+        public bool DoesNotExist()
+        {
+            bool f = false;
+            foreach (string str in File.ReadLines("DATA.txt"))
+            {              
+                string[] splitStr = str.Split(new Char[] { ' ' });
+                if (textBox1.Text != string.Empty && splitStr.Contains(textBox1.Text) || textBox2.Text != string.Empty && splitStr.Contains(textBox2.Text))
+                {
+                    f = true;
+                }                
+            }
+            return f;
+        }
         public bool EmpyTextBoxException()
         {
             if (textBox1.Text == string.Empty || textBox2.Text == string.Empty)
@@ -26,10 +39,16 @@ namespace TelephoneRef
         public bool BigNumber()
         {
             bool f = true;
-            if (double.Parse(textBox2.Text) > 99999999999)
-            {
-                f = false;
-            }
+
+            string t = textBox2.Text;
+            //for (int i = 0; i < t.Length; i++)
+            //{
+                //if (char.IsNumber(t[i]) & textBox2.Text != string.Empty && double.Parse(textBox2.Text) > 99999999999)
+                if (t.Length > 11)
+                {
+                    f = false;
+                }
+            //}
             return f;
         }
         public bool NameIsNumberOrNumberIsLetter()
@@ -37,7 +56,7 @@ namespace TelephoneRef
             bool f = true;
             char[] Arr1 = textBox1.Text.ToCharArray();
             char[] Arr2 = textBox2.Text.ToCharArray();
-            for (var i = 0; i < Arr1.Length; i++)
+            for (var i = 0; i < Arr1.Length-1; i++)
             {
                 if (char.IsNumber(Arr1[i]) == true || char.IsLetter(Arr2[i]) == true)
                     f = false;
@@ -74,23 +93,26 @@ namespace TelephoneRef
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string Line = textBox1.Text + ' ' + textBox2.Text + Environment.NewLine;
+            if (!File.Exists("DATA.txt"))
+                File.Create("DATA.txt").Close();
             if (EmpyTextBoxException() == true && NameIsNumberOrNumberIsLetter() == true && RepeatException() == true && BigNumber() == true)
-            {
-                string Line = textBox1.Text + ' ' + textBox2.Text + Environment.NewLine;
-                if (!File.Exists("DATA.txt"))
-                    File.Create("DATA.txt").Close();
+            {             
                 File.AppendAllText("DATA.txt", Line);
             }
             else
             {
-                Ошибочка f = new Ошибочка();
-                f.Show();
+                //Ошибочка f = new Ошибочка();
+                //f.Show();
+                MessageBox.Show("Товарищ! Вы ничего не написали, либо написали что-то не то");
             }
+            textBox1.Text = null;
+            textBox2.Text = null;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (NameIsNumberOrNumberIsLetter() == true && BigNumber())
+            if (BigNumber() && DoesNotExist())
             {
                 foreach (string str in File.ReadLines("DATA.txt"))
                 {
@@ -107,14 +129,15 @@ namespace TelephoneRef
             }
             else
             {
-                Ошибочка f = new Ошибочка();
-                f.Show();
+                MessageBox.Show("Товарищ! Таких данных нет, либо Вы написали что-то не то");
+                //Ошибочка f = new Ошибочка();
+                //f.Show();
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (NameIsNumberOrNumberIsLetter()==true && BigNumber())
+            if (NameIsNumberOrNumberIsLetter()==true && BigNumber() && DoesNotExist())
             {
                 string[] fileLines = File.ReadAllLines("DATA.txt");
                 int k = 0;
@@ -124,7 +147,7 @@ namespace TelephoneRef
                     if (splitStr.Contains(textBox1.Text))
                     {
                         if (k != fileLines.Length - 1)
-                            for (var i = k; i < fileLines.Length; i++)
+                            for (var i = k; i < fileLines.Length-1; i++)
                             {
                                 fileLines[i] = fileLines[i + 1];
                             }
@@ -133,7 +156,7 @@ namespace TelephoneRef
                     else if (splitStr.Contains(textBox2.Text))
                     {
                         if (k != fileLines.Length - 1)
-                            for (var i = k; i < fileLines.Length; i++)
+                            for (var i = k; i < fileLines.Length-1; i++)
                             {
                                 fileLines[i] = fileLines[i + 1];
                             }
@@ -145,13 +168,10 @@ namespace TelephoneRef
             }
             else
             {
-                Ошибочка f = new Ошибочка();
-                f.Show();
+                //Ошибочка f = new Ошибочка();
+                //f.Show();
+                MessageBox.Show("Товарищ! Таких данных нет, либо Вы написали что-то не то");
             }
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
             textBox1.Text = null;
             textBox2.Text = null;
         }
